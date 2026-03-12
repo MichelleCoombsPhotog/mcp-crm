@@ -1,0 +1,12 @@
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+import Proposal from "./Proposal.jsx";
+
+const path = window.location.pathname;
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    {path.startsWith("/proposal") ? <Proposal /> : <App />}
+  </StrictMode>
+);
